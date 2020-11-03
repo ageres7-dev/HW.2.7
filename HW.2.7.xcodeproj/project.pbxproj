@@ -56,15 +56,55 @@
 		3B90A79625515F4300CDC1ED /* HW.2.7 */ = {
 			isa = PBXGroup;
 			children = (
-				3B90A79725515F4300CDC1ED /* AppDelegate.swift */,
-				3B90A79925515F4300CDC1ED /* SceneDelegate.swift */,
-				3B90A79B25515F4300CDC1ED /* ViewController.swift */,
-				3B90A79D25515F4300CDC1ED /* Main.storyboard */,
-				3B90A7A025515F4500CDC1ED /* Assets.xcassets */,
-				3B90A7A225515F4500CDC1ED /* LaunchScreen.storyboard */,
-				3B90A7A525515F4500CDC1ED /* Info.plist */,
+				3B90A7B22551601E00CDC1ED /* Models */,
+				3B90A7AE25515FB900CDC1ED /* Supporting Files */,
+				3B90A7B025515FD100CDC1ED /* View Controllers */,
+				3B90A7B125515FE900CDC1ED /* Storyboards */,
+				3B90A7AD25515F9500CDC1ED /* Resourses */,
 			);
 			path = HW.2.7;
+			sourceTree = "<group>";
+		};
+		3B90A7AD25515F9500CDC1ED /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				3B90A7A025515F4500CDC1ED /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		3B90A7AE25515FB900CDC1ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B90A79725515F4300CDC1ED /* AppDelegate.swift */,
+				3B90A79925515F4300CDC1ED /* SceneDelegate.swift */,
+				3B90A7A525515F4500CDC1ED /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B90A7B025515FD100CDC1ED /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B90A79B25515F4300CDC1ED /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3B90A7B125515FE900CDC1ED /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3B90A7A225515F4500CDC1ED /* LaunchScreen.storyboard */,
+				3B90A79D25515F4300CDC1ED /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3B90A7B22551601E00CDC1ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RNER64Q73Y;
-				INFOPLIST_FILE = HW.2.7/Info.plist;
+				INFOPLIST_FILE = "HW.2.7/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.ageres7.HW-2-7";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RNER64Q73Y;
-				INFOPLIST_FILE = HW.2.7/Info.plist;
+				INFOPLIST_FILE = "HW.2.7/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.ageres7.HW-2-7";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
