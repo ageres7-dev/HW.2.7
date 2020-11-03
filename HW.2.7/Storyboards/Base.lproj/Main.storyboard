@@ -11,13 +11,13 @@
         <!--Persons List-->
         <scene sceneID="FnZ-9F-ydw">
             <objects>
-                <tableViewController id="QGm-UG-2uR" sceneMemberID="viewController">
+                <tableViewController id="QGm-UG-2uR" customClass="PersonsListViewController" customModule="HW_2_7" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wi1-6g-7hg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contacts" id="gO1-He-MVJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" id="gO1-He-MVJ">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gO1-He-MVJ" id="liw-Hb-MT3">
@@ -40,21 +40,49 @@
             </objects>
             <point key="canvasLocation" x="4206" y="-150"/>
         </scene>
-        <!--View Controller-->
+        <!--fullName-->
         <scene sceneID="Soe-fY-2pU">
             <objects>
-                <viewController id="96u-KP-CVA" sceneMemberID="viewController">
+                <viewController id="96u-KP-CVA" customClass="PersonDetailsViewController" customModule="HW_2_7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OIo-6x-O7i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-R7-1se">
+                                <rect key="frame" x="16" y="156" width="382" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7r-lz-V16">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-bI-ltf">
+                                        <rect key="frame" x="0.0" y="40" width="382" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tOi-VJ-Jze"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sd3-R7-1se" firstAttribute="top" secondItem="tOi-VJ-Jze" secondAttribute="top" constant="16" id="5jD-Rs-FYy"/>
+                            <constraint firstItem="sd3-R7-1se" firstAttribute="leading" secondItem="tOi-VJ-Jze" secondAttribute="leading" constant="16" id="RQp-XF-i6m"/>
+                            <constraint firstItem="tOi-VJ-Jze" firstAttribute="trailing" secondItem="sd3-R7-1se" secondAttribute="trailing" constant="16" id="UUA-pQ-aku"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LvU-Rn-K9z"/>
+                    <navigationItem key="navigationItem" title="fullName" id="LvU-Rn-K9z"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="2yb-bI-ltf" id="W6b-JX-0Ic"/>
+                        <outlet property="phoneLabel" destination="e7r-lz-V16" id="uMB-F0-dnd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zz4-RD-ajQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5013" y="-150"/>
+            <point key="canvasLocation" x="5053.6231884057979" y="-150"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="ECL-M9-oR7">
@@ -83,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRW-dv-JiG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4207" y="501"/>
+            <point key="canvasLocation" x="4206" y="672"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MyK-So-YMA">
@@ -100,7 +128,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFh-LZ-W4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3318" y="501"/>
+            <point key="canvasLocation" x="3316" y="672"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D8Z-Y7-tuW">
@@ -125,6 +153,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UgE-FS-KaT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T4t-4X-vX9">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -135,7 +164,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARh-Br-dfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="174"/>
+            <point key="canvasLocation" x="2514" y="234"/>
         </scene>
     </scenes>
     <resources>
