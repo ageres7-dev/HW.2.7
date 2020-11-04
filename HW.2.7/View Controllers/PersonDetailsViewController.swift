@@ -22,8 +22,8 @@ class PersonDetailsViewController: UIViewController {
         emailLabel.text = "Email: \(person.email)"
         contactPictUIImageView.layer.cornerRadius = 15
         contactPictUIImageView.image = UIImage(named: "\(person.lastName)")
-
+        
     }
     
-
+    
 }

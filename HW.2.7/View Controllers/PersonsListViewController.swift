@@ -9,7 +9,7 @@ import UIKit
 
 class PersonsListViewController: UITableViewController{
     var contacts: [Person]!
-
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let personDetailsVC = segue.destination as! PersonDetailsViewController
@@ -21,13 +21,13 @@ class PersonsListViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         contacts.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-
+        
         let person = contacts[indexPath.row]
         cell.textLabel?.text = person.fullName
-
+        
         return cell
     }
 }

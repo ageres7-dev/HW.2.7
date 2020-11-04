@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailPersonListViewController: UITableViewController {
-
+    
     var contacts: [Person]!
     
     // MARK: - Header In Section
@@ -16,7 +16,7 @@ class DetailPersonListViewController: UITableViewController {
         //Use a content configuration to manage the cell’s text instead. Use defaultContentConfiguration() to get a default list content configuration, set your primary text to the text property of the configuration, and apply the configuration by setting it to the contentConfiguration property of the cell.
         
         let header = UITableViewHeaderFooterView()
-     
+        
         var confHeader = header.defaultContentConfiguration()
         confHeader.text = contacts[section].fullName
         confHeader.textProperties.color = .brown
@@ -24,6 +24,8 @@ class DetailPersonListViewController: UITableViewController {
                                                 size: 30)!
         confHeader.image = UIImage(named: "\(contacts[section].lastName)")
         confHeader.imageProperties.cornerRadius = 15
+        confHeader.imageProperties.reservedLayoutSize = CGSize(width: 40, height: 40)
+        confHeader.imageProperties.maximumSize = CGSize(width: 40, height: 40)
         
         header.contentConfiguration = confHeader
         
@@ -40,7 +42,7 @@ class DetailPersonListViewController: UITableViewController {
     
     // MARK: - Cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         let cell = UITableViewCell()
         let person = contacts[indexPath.section]
         
@@ -61,7 +63,7 @@ class DetailPersonListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
