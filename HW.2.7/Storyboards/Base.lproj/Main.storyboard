@@ -84,17 +84,26 @@
             </objects>
             <point key="canvasLocation" x="5053.6231884057979" y="-150"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Persons List-->
         <scene sceneID="ECL-M9-oR7">
             <objects>
-                <tableViewController id="LcS-fb-3QW" sceneMemberID="viewController">
+                <tableViewController id="LcS-fb-3QW" customClass="DetailPersonListViewController" customModule="HW_2_7" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JUP-ux-cQV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactsAll" id="h1E-9P-6ki">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fullName" id="cyS-rX-fuc">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cyS-rX-fuc" id="ncp-iB-3om">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactsAll" id="h1E-9P-6ki">
+                                <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h1E-9P-6ki" id="3tW-r3-gw7">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -107,7 +116,7 @@
                             <outlet property="delegate" destination="LcS-fb-3QW" id="7bX-s1-von"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="bA8-jZ-9fP"/>
+                    <navigationItem key="navigationItem" title="Persons List" id="bA8-jZ-9fP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRW-dv-JiG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,8 +127,8 @@
             <objects>
                 <navigationController id="tSE-Dl-FO7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="4W1-ja-meg"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SGJ-jG-khC">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="SGJ-jG-khC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -150,7 +159,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="h9x-Je-56Y">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UgE-FS-KaT" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UgE-FS-KaT" customClass="TabBarController" customModule="HW_2_7" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T4t-4X-vX9">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

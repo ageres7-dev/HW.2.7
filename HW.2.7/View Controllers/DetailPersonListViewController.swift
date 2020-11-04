@@ -1,46 +1,71 @@
 //
-//  PersonsListViewController.swift
+//  DetailPersonListViewController.swift
 //  HW.2.7
 //
-//  Created by Сергей Долгих on 03.11.2020.
+//  Created by Сергей Долгих on 04.11.2020.
 //
 
 import UIKit
 
-class PersonsListViewController: UITableViewController{
-    
-//    private let contacts = Person.getContacts(from: DataManager())
+class DetailPersonListViewController: UITableViewController {
+
     var contacts: [Person] = []
     
     
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let personDetailsVC = segue.destination as! PersonDetailsViewController
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        personDetailsVC.person = contacts[indexPath.row]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         contacts.count
+//        return
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  2
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        contacts[section].fullName
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-
-        let person = contacts[indexPath.row]
-        cell.textLabel?.text = person.fullName
+        
+        let cell = UITableViewCell() // tableView.dequeueReusableCell(withIdentifier: "contactsAll", for: indexPath)
+//        let cell2 = tableView.
+//        indexPath
+        let person = contacts[indexPath.section]
+//        if indexPath.row == 0 {
+//            cell.textLabel?.text = person.number
+//        } else if indexPath.row == 1 {
+//            cell.textLabel?.text = person.email
+//        }
+        
+        cell.textLabel?.text = indexPath.row == 0 ? person.number : person.email
+       
+        
+        
 
         return cell
     }
-    
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -58,7 +83,7 @@ class PersonsListViewController: UITableViewController{
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
+        }    
     }
     */
 
@@ -87,6 +112,4 @@ class PersonsListViewController: UITableViewController{
     }
     */
 
-
 }
-
