@@ -24,7 +24,6 @@ class DetailPersonListViewController: UITableViewController {
                                                 size: 30)!
         confHeader.image = UIImage(named: "\(contacts[section].lastName)")
         confHeader.imageProperties.cornerRadius = 15
-        confHeader.imageProperties.tintColor = .red
         
         header.contentConfiguration = confHeader
         

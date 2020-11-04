@@ -20,6 +20,7 @@ class PersonDetailsViewController: UIViewController {
         navigationItem.title = person.fullName
         phoneLabel.text = "Phone: \(person.number)"
         emailLabel.text = "Email: \(person.email)"
+        contactPictUIImageView.layer.cornerRadius = 15
         contactPictUIImageView.image = UIImage(named: "\(person.lastName)")
 
     }
