@@ -9,25 +9,17 @@ import UIKit
 
 class DetailPersonListViewController: UITableViewController {
 
-    var contacts: [Person] = []
-    
+    var contacts: [Person]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         contacts.count
-//        return
+
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,9 +44,6 @@ class DetailPersonListViewController: UITableViewController {
         
         cell.textLabel?.text = indexPath.row == 0 ? person.number : person.email
        
-        
-        
-
         return cell
     }
     /*

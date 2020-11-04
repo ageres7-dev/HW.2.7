@@ -8,16 +8,8 @@
 import UIKit
 
 class PersonsListViewController: UITableViewController{
-    
-//    private let contacts = Person.getContacts(from: DataManager())
-    var contacts: [Person] = []
-    
-    
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
+    var contacts: [Person]!
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let personDetailsVC = segue.destination as! PersonDetailsViewController
@@ -31,7 +23,6 @@ class PersonsListViewController: UITableViewController{
         contacts.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
 
