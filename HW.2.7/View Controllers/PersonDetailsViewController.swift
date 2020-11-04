@@ -10,6 +10,7 @@ import UIKit
 class PersonDetailsViewController: UIViewController {
     @IBOutlet var phoneLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var contactPictUIImageView: UIImageView!
     
     var person: Person!
     
@@ -19,6 +20,7 @@ class PersonDetailsViewController: UIViewController {
         navigationItem.title = person.fullName
         phoneLabel.text = "Phone: \(person.number)"
         emailLabel.text = "Email: \(person.email)"
+        contactPictUIImageView.image = UIImage(named: "\(person.lastName)")
 
     }
     

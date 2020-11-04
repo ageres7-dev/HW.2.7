@@ -11,94 +11,59 @@ class DetailPersonListViewController: UITableViewController {
 
     var contacts: [Person]!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        contacts.count
-
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  2
-    }
-
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        contacts[section].fullName
+    // MARK: - Header In Section
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //Use a content configuration to manage the cell’s text instead. Use defaultContentConfiguration() to get a default list content configuration, set your primary text to the text property of the configuration, and apply the configuration by setting it to the contentConfiguration property of the cell.
+        
+        let header = UITableViewHeaderFooterView()
+     
+        var confHeader = header.defaultContentConfiguration()
+        confHeader.text = contacts[section].fullName
+        confHeader.textProperties.color = .brown
+        confHeader.textProperties.font = UIFont(name: "Futura-MediumItalic",
+                                                size: 30)!
+        confHeader.image = UIImage(named: "\(contacts[section].lastName)")
+        confHeader.imageProperties.cornerRadius = 15
+        confHeader.imageProperties.tintColor = .red
+        
+        header.contentConfiguration = confHeader
+        
+        return header
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        60
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        contacts.count
+    }
+    
+    // MARK: - Cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell() // tableView.dequeueReusableCell(withIdentifier: "contactsAll", for: indexPath)
-//        let cell2 = tableView.
-//        indexPath
-        let person = contacts[indexPath.section]
-//        if indexPath.row == 0 {
-//            cell.textLabel?.text = person.number
-//        } else if indexPath.row == 1 {
-//            cell.textLabel?.text = person.email
-//        }
-        
-        cell.textLabel?.text = indexPath.row == 0 ? person.number : person.email
        
+        let cell = UITableViewCell()
+        let person = contacts[indexPath.section]
+        
+        cell.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        cell.textLabel?.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = person.number
+            cell.imageView?.image = UIImage.init(systemName: "phone")
+        case 1:
+            cell.textLabel?.text = person.email
+            cell.imageView?.image = UIImage.init(systemName: "tray")
+        default: break
+        }
         return cell
     }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        2
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
