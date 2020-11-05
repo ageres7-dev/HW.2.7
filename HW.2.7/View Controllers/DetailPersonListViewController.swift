@@ -22,12 +22,14 @@ class DetailPersonListViewController: UITableViewController {
         confHeader.textProperties.color = .brown
         confHeader.textProperties.font = UIFont(name: "Futura-MediumItalic",
                                                 size: 30)!
+       
         confHeader.image = UIImage(named: "\(contacts[section].lastName)")
         confHeader.imageProperties.cornerRadius = 15
         confHeader.imageProperties.reservedLayoutSize = CGSize(width: 40, height: 40)
         confHeader.imageProperties.maximumSize = CGSize(width: 40, height: 40)
-        
+
         header.contentConfiguration = confHeader
+        header.contentView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         
         return header
     }
