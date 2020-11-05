@@ -28,6 +28,10 @@ class PersonsListViewController: UITableViewController{
         let person = contacts[indexPath.row]
         cell.textLabel?.text = person.fullName
         
+        let selectedColor = UIView()
+        selectedColor.backgroundColor = .systemRed
+        cell.selectedBackgroundView = selectedColor
+        
         return cell
     }
 }
